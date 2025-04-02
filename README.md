@@ -8,6 +8,6 @@ This is a small Docker-compose with:
 
 Run with:
 ```sh
-export VERSION=$(git rev-parse HEAD | cut -c -7)
+export COMMIT=$(git rev-parse HEAD | cut -c -7)
 docker compose up
 ```
