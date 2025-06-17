@@ -1,6 +1,6 @@
 schema-version: v2.2
-dd-service: service-with-service-catalog
-application: service-with-service-catalog
+dd-service: service
+application: service
 tier: "1"
 type: web
 languages:
@@ -9,4 +9,4 @@ links:
   - name: Source
     type: repo
     provider: github
-    url: https://github.com/rpelliard/datadog-sci-demo/tree/main/node-server
+    url: https://github.com/olivwalsh/datadog-sci-demo/tree/main/node-server

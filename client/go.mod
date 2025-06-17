@@ -1,3 +1,3 @@
-module github.com/rpelliard/datadog-sci-demo/client
+module github.com/olivwalsh/datadog-sci-demo/client
 
 go 1.17

@@ -4,10 +4,8 @@ services:
     env_file:
       - config.env
     links:
-      - client-inferred
-      - client-sc
-      - server-with-service-catalog
-      - server-with-shortsha-version
+      - client
+      - server
     environment:
       - DD_APM_NON_LOCAL_TRAFFIC=true
       - DD_APM_ENABLED=true
@@ -16,32 +14,16 @@ services:
       - /proc/:/host/proc/:ro
       - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
 
-  client-inferred:
+  client:
     build:
-      context:
-        ./client
+      context: ./client
     environment:
-      - SERVER_HOST=server-with-shortsha-version
+      - SERVER_HOST=server
 
-  client-sc:
-    build:
-      context:
-        ./client
-    environment:
-      - SERVER_HOST=server-with-service-catalog
-
-  server-with-shortsha-version:
-    build:
-      context: ./node-server
-    environment:
-      - DD_AGENT_HOST=datadog-agent
-      - DD_VERSION=v1.2.6-${COMMIT}
-      - DD_SERVICE=server-with-shortsha-version
-
-  server-with-service-catalog:
+  server:
     build:
       context: ./node-server
     environment:
       - DD_AGENT_HOST=datadog-agent
       - DD_VERSION=1.2.6
-      - DD_SERVICE=datadog-sci-demo
+      - DD_SERVICE=olivia-test
