@@ -1,6 +1,6 @@
 schema-version: v2.2
-dd-service: olivia-test
-application: olivia-test
+dd-service: server-test
+application: server-test
 tier: "1"
 type: web
 languages:

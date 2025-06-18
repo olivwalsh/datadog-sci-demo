@@ -4,8 +4,8 @@ services:
     env_file:
       - config.env
     links:
-      - client
-      - server
+      - client-test
+      - server-test
     environment:
       - DD_APM_NON_LOCAL_TRAFFIC=true
       - DD_APM_ENABLED=true
@@ -14,16 +14,15 @@ services:
       - /proc/:/host/proc/:ro
       - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
 
-  client:
+  client-test:
     build:
       context: ./client
     environment:
-      - SERVER_HOST=server
+      - SERVER_HOST=server-test
 
-  server:
+  server-test:
     build:
       context: ./node-server
     environment:
       - DD_AGENT_HOST=datadog-agent
-      - DD_VERSION=1.2.6
-      - DD_SERVICE=olivia-test
+      - DD_SERVICE=server-test
