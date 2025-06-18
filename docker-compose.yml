@@ -20,9 +20,9 @@ services:
     environment:
       - SERVER_HOST=server-test
 
-  server-test:
+  olivia-test:
     build:
       context: ./node-server
     environment:
       - DD_AGENT_HOST=datadog-agent
-      - DD_SERVICE=server-test
+      - DD_SERVICE=olivia-test
