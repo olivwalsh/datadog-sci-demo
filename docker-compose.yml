@@ -5,7 +5,7 @@ services:
       - config.env
     links:
       - client-test
-      - server-test
+      - olivia-test
     environment:
       - DD_APM_NON_LOCAL_TRAFFIC=true
       - DD_APM_ENABLED=true
@@ -18,7 +18,7 @@ services:
     build:
       context: ./client
     environment:
-      - SERVER_HOST=server-test
+      - SERVER_HOST=olivia-test
 
   olivia-test:
     build:
