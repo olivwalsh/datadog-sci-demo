@@ -1,5 +1,13 @@
 FROM node:16
 
+# Datadog Source Code Integration (SCI) arguments
+ARG DD_GIT_REPOSITORY_URL
+ARG DD_GIT_COMMIT_SHA
+ARG DD_TAGS
+ENV DD_GIT_REPOSITORY_URL=${DD_GIT_REPOSITORY_URL}
+ENV DD_GIT_COMMIT_SHA=${DD_GIT_COMMIT_SHA}
+ENV DD_TAGS=${DD_TAGS}
+
 # Create app directory
 WORKDIR /usr/src/node-server
 
@@ -16,5 +24,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-# Not the usual way to start on prod, but it produces stack traces on TS
-CMD [ "npx", "ts-node", "server.ts" ]
+# Enable source maps for better stack traces and SCI integration
+CMD [ "node", "--enable-source-maps", "-r", "ts-node/register", "server.ts" ]
