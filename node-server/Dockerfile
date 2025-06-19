@@ -26,5 +26,5 @@ COPY ../.git/HEAD ../.git/HEAD
 COPY ../.git/refs ../.git/refs
 
 EXPOSE 8080
-# APM Telemetry - Enable source maps for better stack traces
-CMD [ "node", "--enable-source-maps", "-r", "ts-node/register", "server.ts" ]
+# Not the usual way to start on prod, but it produces stack traces on TS
+CMD [ "npx", "ts-node", "server.ts" ]
