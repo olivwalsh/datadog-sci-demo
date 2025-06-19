@@ -31,3 +31,4 @@ services:
       - DD_SERVICE=olivia-test
       - DD_GIT_REPOSITORY_URL=https://github.com/olivwalsh/datadog-sci-demo
       - DD_GIT_COMMIT_SHA=${DD_GIT_COMMIT_SHA}
+      - DD_TAGS=git.commit.sha:${DD_GIT_COMMIT_SHA},git.repository_url:github.com/olivwalsh/datadog-sci-demo
