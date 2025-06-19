@@ -1,0 +1,16 @@
+# APM Telemetry Tagging - Allow Git metadata access during build
+# Include minimal git metadata needed for build args
+!.git/HEAD
+!.git/config
+!.git/refs
+
+# Standard Node.js .dockerignore
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.nyc_output
+coverage
+.DS_Store
+*.swp
+*.swo
