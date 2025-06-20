@@ -1,0 +1,4 @@
+# Allow .git for SCI tagging
+!.git/HEAD
+!.git/config
+!.git/refs
