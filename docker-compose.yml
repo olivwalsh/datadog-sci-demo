@@ -30,3 +30,6 @@ services:
     environment:
       - DD_AGENT_HOST=datadog-agent
       - DD_SERVICE=sales-demo
+      - DD_GIT_REPOSITORY_URL=${DD_GIT_REPOSITORY_URL}
+      - DD_GIT_COMMIT_SHA=${DD_GIT_COMMIT_SHA}
+      - DD_TAGS=${DD_TAGS}
