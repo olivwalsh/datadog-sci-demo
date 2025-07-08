@@ -9,4 +9,3 @@ links:
   - name: Source
     type: repo
     provider: github
-    url: https://github.com/olivwalsh/datadog-sci-demo/tree/main/node-server
